@@ -1,9 +1,12 @@
 import sys
 #sys.stdin=open("input.txt", "rt")
-T = int(input())
-for t in range(T):
-    n,s,e,k = map(int, input().split())
-    a=list(map(int, input().split()))
-    a=a[s-1:e]
-    a.sort()
-    print("#%d %d" %(t+1, a[k-1]))
+n , k = map(int,input().split())
+cnt = 0
+for i in range(1 , n+1):
+    if n%i == 0:
+        cnt +=1
+    if cnt == k:
+        print(i)
+        break
+else:
+    print(-1)
